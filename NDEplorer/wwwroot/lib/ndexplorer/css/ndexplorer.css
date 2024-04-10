@@ -1,0 +1,254 @@
+﻿@charset "UTF-8";
+body {
+  list-style: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.filemanager {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  /*height: $fm-height;*/
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(25, 1fr);
+  gap: 2px; /*khoảng cách cho các cột,dòng*/
+}
+.filemanager .btn-toggle {
+  padding: 8px;
+  height: 8px;
+  line-height: 8px;
+  font-family: monospace;
+  padding-bottom: 15px;
+}
+.filemanager .btn-file {
+  border: 0px;
+}
+.filemanager > div {
+  border: 1px solid red;
+}
+.filemanager .fm-toolbox {
+  grid-column: 1/21;
+  grid-row: 1/3;
+  /*display: flex;*/
+}
+.filemanager .fm-toolbox .btn-xoa {
+  padding: 10px 15px;
+  margin: 4px;
+  border-radius: 5px;
+  background-color: rgb(166, 162, 162);
+}
+.filemanager .fm-toolbox .btn-xoa:hover {
+  background-color: rgb(241, 163, 163);
+  border-color: rgb(126, 119, 119);
+}
+.filemanager .fm-folder-tree {
+  grid-column: 1/6;
+  grid-row: 3/25;
+  height: 500px;
+  overflow: auto;
+}
+.filemanager .fm-main-panel {
+  grid-column: 6/21;
+  grid-row: 3/25;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.filemanager .fm-main-panel .panel-item {
+  width: 100px;
+  height: 150px;
+  padding: 10px;
+  cursor: pointer;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+.filemanager .fm-main-panel .panel-item:hover {
+  background-color: rgb(249, 246, 246);
+  border-color: powderblue;
+}
+.filemanager .fm-main-panel .panel-item.selected {
+  background-color: rgb(249, 246, 246);
+  border-color: rgb(208, 229, 237);
+}
+.filemanager .fm-main-panel .panel-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+.filemanager .fm-additional-info {
+  grid-column: 1/21;
+  grid-row: 25/26;
+}
+.filemanager .fm-folder-updin-popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(170, 170, 170, 0.15);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.filemanager .fm-folder-updin-popup.show {
+  display: flex;
+}
+.filemanager .fm-folder-updin-popup .popup-main {
+  background: white;
+  padding: 15px;
+  border: 1px solid rgb(207, 207, 207);
+}
+.filemanager .fm-folder-updin-popup .popup-main .btn-sd {
+  display: flex;
+  padding: 10px;
+}
+.filemanager .fm-folder-updin-popup .popup-main .btn-sd .bnt-save {
+  margin-left: 10px;
+  background-color: rgb(161, 181, 191);
+}
+.folder-level-1 {
+  padding-left: 0px;
+  margin: 10px;
+}
+
+.folder-level-2 {
+  padding-left: 10px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-3 {
+  padding-left: 20px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-4 {
+  padding-left: 30px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-5 {
+  padding-left: 40px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-6 {
+  padding-left: 50px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-7 {
+  padding-left: 60px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-8 {
+  padding-left: 70px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-9 {
+  padding-left: 80px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-10 {
+  padding-left: 90px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-11 {
+  padding-left: 100px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-12 {
+  padding-left: 110px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-13 {
+  padding-left: 120px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-14 {
+  padding-left: 130px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-15 {
+  padding-left: 140px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-16 {
+  padding-left: 150px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-17 {
+  padding-left: 160px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-18 {
+  padding-left: 170px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-19 {
+  padding-left: 180px;
+  margin: 10px;
+  display: none;
+}
+
+.folder-level-20 {
+  padding-left: 190px;
+  margin: 10px;
+  display: none;
+}
+
+/*.folder-level-1:not(.show) ~ .folder-level-2 {
+    display: none !important;
+}
+
+.folder-level-1.show ~ .folder-level-2 {
+    display: block;
+}*/
+li[class*=folder-level-] {
+  cursor: pointer;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+li[class*=folder-level-]:hover, li[class*=folder-level-].selected {
+  background-color: rgb(249, 246, 246);
+}
+
+.show {
+  display: block;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}

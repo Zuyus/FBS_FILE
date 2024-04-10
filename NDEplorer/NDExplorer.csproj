@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\upload\Text1\Text1_a\**" />
+    <Compile Remove="wwwroot\upload\Text1\Text1_b - 1\**" />
+    <Compile Remove="wwwroot\upload\Text1\Text1_b - 4\**" />
+    <Content Remove="wwwroot\upload\Text1\Text1_a\**" />
+    <Content Remove="wwwroot\upload\Text1\Text1_b - 1\**" />
+    <Content Remove="wwwroot\upload\Text1\Text1_b - 4\**" />
+    <EmbeddedResource Remove="wwwroot\upload\Text1\Text1_a\**" />
+    <EmbeddedResource Remove="wwwroot\upload\Text1\Text1_b - 1\**" />
+    <EmbeddedResource Remove="wwwroot\upload\Text1\Text1_b - 4\**" />
+    <None Remove="wwwroot\upload\Text1\Text1_a\**" />
+    <None Remove="wwwroot\upload\Text1\Text1_b - 1\**" />
+    <None Remove="wwwroot\upload\Text1\Text1_b - 4\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\upload\Text1\Text1_b - 2\" />
+    <Folder Include="wwwroot\upload\Text1\Text1_b - 3\" />
+    <Folder Include="wwwroot\upload\Text1\Text1_b - 1\" />
+    <Folder Include="wwwroot\upload\Text1\Text1_b\Text1_b2\" />
+    <Folder Include="wwwroot\upload\Text1\Text1_b\Text1_b1\" />
+    <Folder Include="wwwroot\upload\Text2\Text1_b - 2\" />
+    <Folder Include="wwwroot\upload\Text2\Text1_b - 3\" />
+    <Folder Include="wwwroot\upload\Text2\Text1_b - 4\" />
+    <Folder Include="wwwroot\upload\Text2\Text1_b - 1\" />
+    <Folder Include="wwwroot\upload\Text2\Text1_b\test\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+</Project>
