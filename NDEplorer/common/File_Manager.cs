@@ -59,6 +59,11 @@ namespace NDExplorer.common
                             UploadFile(_value);
                             break;
                         }
+                    case "RENAME_ITEM":
+                        {
+                            RenameItem(_value,_secondaryValue);
+                            break;
+                        }
                     default:
                         break;
                 }
@@ -155,13 +160,35 @@ namespace NDExplorer.common
             }
         }
 
-        /* protected void RemoveFolder(string name)
-         {
-             name = Path.Combine(_rootPath, name);
-             if
+        //Rename file:
+        protected void RenameItem(string oldPath, string newPath)
+        {
 
-                 System.IO.File.Move("oldfilename", "newfilename");
-         }*/
+            oldPath = Path.Combine(_rootPath, oldPath);
+            newPath = Path.Combine(_rootPath, newPath);
+            if(Directory.Exists(oldPath))
+            {
+                if(Directory.Exists(newPath) == false)
+                {
+                    Directory.Move(oldPath, newPath);
+                }
+                else
+                {
+                    throw new Exception("Tên thư mục không tồn tại!");
+                }
+
+            }else if (File.Exists(oldPath))
+			{
+				if (File.Exists(newPath) == false)
+				{
+					File.Move(oldPath, newPath);
+				}
+				else
+				{
+					throw new Exception("Tên tệp đã tồn tại!");
+				}
+			}
+		}
 
         protected void UploadFile(string folder)
         {

@@ -198,25 +198,36 @@
             this._folderUpdinPopup.isRenameMode = false;
 
         },
+        //Thoat:
         closeFolderUpdinPopup() {
             this._folderUpdinPopup.show = false;
         },
+        //Sửa:
         updinFolder() {
-            if (this._folderUpdinPopup.isRenameMode) {
-                // Mode Rename
-
-            }
-            else {
-                // Mode Create
                 let i = this._folderTreeSelecedIndex;
-                let newFolderName = this._folderUpdinPopup.value;
-
-                if (!newFolderName) {
+                let newName = this._folderUpdinPopup.value;
+                if (!newName) {
                     alert("chưa nhập tên thư mục");
                     return;
                 }
+            if (this._folderUpdinPopup.isRenameMode) {
+                // Mode Rename
+                let j = this._panelItemSelectedIndex;
+                let oldPath = this._panelData[j].path;
+                let newPath = this._folderTree[i].fullPath + "\\" + newName;
 
-                let newFolderPath = this._folderTree[i].fullPath + "\\" + newFolderName;
+                this._setting.setParams("RENAME_ITEM", oldPath, newPath);
+                fetch(this._setting.getUrl())
+                    .then(res => res.json())
+                    .then(json => {
+                        location.reload();
+                    });
+            }
+            else {
+                // Mode Create
+
+
+                let newFolderPath = this._folderTree[i].fullPath + "\\" + newName;
 
                 this._setting.setParams("ADD_NEW_FOLDER", newFolderPath);
                 fetch(this._setting.getUrl())
